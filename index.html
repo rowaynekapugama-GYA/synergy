@@ -58,6 +58,13 @@ function trackConv(label, url){
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
   .tealtext{color:var(--teal-deep)}
 
+
+  /* open now */
+  .open-now{display:none;align-items:center;gap:8px;background:#e7f9ee;border:1px solid #b7e6c9;color:#157347;border-radius:50px;padding:9px 15px;font-size:12.5px;font-weight:800;white-space:nowrap}
+  .open-now .dot{width:8px;height:8px;border-radius:50%;background:#22a35c;animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,163,92,.5)}70%{box-shadow:0 0 0 7px rgba(34,163,92,0)}100%{box-shadow:0 0 0 0 rgba(34,163,92,0)}}
+  body.is-open .open-now{display:inline-flex}
+  @media(max-width:759px){body.is-open .hdr .open-now{display:none}}
   /* announcement */
   .anno{background:var(--navy);color:#a8ded8;text-align:center;font-size:13px;font-weight:600;padding:9px 16px;letter-spacing:.3px}
   .anno b{color:#fff;font-weight:800}
@@ -98,6 +105,7 @@ function trackConv(label, url){
   .badge .d{width:7px;height:7px;border-radius:50%;background:var(--teal)}
   .hero h1{font-size:clamp(34px,5.6vw,52px);color:var(--navy)}
   .hero h1 .price{color:var(--teal-deep)}
+  .hero h1 .h1sub{display:block;font-size:.44em;font-weight:600;color:var(--ink-soft);letter-spacing:0;margin-top:14px}
   .hero .val{display:inline-block;background:var(--navy);color:#a8ded8;font-size:13px;font-weight:800;border-radius:50px;padding:5px 14px;margin-top:14px}
   .hero .sub{margin:14px 0 0;font-size:clamp(15px,2.4vw,17px);color:var(--ink-soft);max-width:540px}
   .hero .sub b{color:var(--navy)}
@@ -145,8 +153,10 @@ function trackConv(label, url){
   .docs{background:#fff}
   .doc-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
   @media(min-width:720px){.doc-grid{grid-template-columns:repeat(3,1fr)}}
-  .doc{background:var(--mist);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 12px 28px rgba(27,43,75,.06);display:flex;flex-direction:column}
-  .doc .mono{width:64px;height:64px;border-radius:50%;background:var(--tealgrad);color:var(--navy-2);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:22px;margin-bottom:14px;box-shadow:0 8px 18px rgba(20,158,150,.3)}
+  .doc{background:var(--mist);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 12px 28px rgba(27,43,75,.06);display:flex;flex-direction:column;padding:0}
+  .doc .ph{aspect-ratio:1/1;overflow:hidden;background:linear-gradient(180deg,#e8eef2,#d8e4e8)}
+  .doc .ph img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .doc .bd{padding:20px 24px 24px;display:flex;flex-direction:column;flex:1}
   .doc .role{font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal-deep)}
   .doc h3{font-size:21px;color:var(--navy);margin:4px 0 2px}
   .doc .quals{font-size:12px;color:var(--muted);font-weight:600;margin-bottom:10px}
@@ -175,27 +185,6 @@ function trackConv(label, url){
   .svc .ic svg{width:22px;height:22px}
   .svc h3{font-size:15px;font-family:var(--sans);font-weight:800;margin-bottom:3px;color:var(--navy)}
   .svc p{font-size:12.5px;color:var(--ink-soft);margin:0}
-
-  /* smile gallery */
-  .gallery{background:var(--navy);color:#fff}
-  .gallery .sec-head h2{color:#fff}
-  .gallery .sec-head p{color:#c5d2e6}
-  .gal-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:32px}
-  @media(min-width:860px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
-  .gal{background:var(--navy-2);border:1px solid rgba(124,232,216,.25);border-radius:20px;overflow:hidden;box-shadow:0 16px 34px rgba(0,0,0,.3)}
-  .ba{position:relative;aspect-ratio:9/6.4;overflow:hidden;user-select:none}
-  .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .ba .after-wrap{position:absolute;inset:0;clip-path:inset(0 0 0 50%)}
-  .ba .divider{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--teal-lt);transform:translateX(-50%);pointer-events:none;box-shadow:0 0 12px rgba(0,0,0,.4)}
-  .ba .divider::after{content:"\2194";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;background:var(--tealgrad);color:var(--navy-2);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800}
-  .ba .lab{position:absolute;top:10px;font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;background:rgba(18,32,56,.82);color:#fff;border-radius:50px;padding:4px 11px;pointer-events:none}
-  .ba .lab.b{left:10px}
-  .ba .lab.a{right:10px;background:var(--tealgrad);color:var(--navy-2)}
-  .ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
-  .gal .cap{padding:16px 18px 18px}
-  .gal .cap h3{font-size:16px;color:var(--teal-lt);font-family:var(--sans);font-weight:800;margin-bottom:3px}
-  .gal .cap p{font-size:12.5px;color:#c5d2e6;margin:0}
-  .gal-note{text-align:center;font-size:12px;color:#8ea0bd;margin-top:18px}
 
   /* why / suburbs */
   .whywrap{background:var(--mist-2)}
@@ -283,6 +272,7 @@ function trackConv(label, url){
   <div class="row">
     <a href="#top" aria-label="Synergy Dental Group"><img class="logo" src="assets/logo.png" alt="Synergy Dental Group"></a>
     <div class="acts">
+      <a class="open-now" href="tel:0370366855" onclick="return trackConv('call_click')"><span class="dot"></span>Open now</a>
       <a class="btn btn-line callnum" href="tel:0370366855" onclick="return trackConv('call_click')">&#9742;&nbsp;(03) 7036 6855</a>
       <a class="btn btn-teal" href="https://synergydentalgroup.com.au/book-now/" target="_blank" rel="noopener" onclick="trackConv('book_now_click')">Book Now</a>
       <a class="btn btn-navy callm" href="tel:0370366855" onclick="return trackConv('call_click')">&#9742;&nbsp;Call</a>
@@ -295,7 +285,8 @@ function trackConv(label, url){
   <div class="wrap hero-grid">
     <div>
       <span class="badge"><span class="d"></span> Dentist in Parkdale &middot; Bayside Melbourne</span>
-      <h1>New patients pay just <span class="price">$250</span> for a complete exam &amp; clean</h1>
+      <a class="open-now" style="margin-left:8px;vertical-align:middle" href="tel:0370366855" onclick="return trackConv('call_click')"><span class="dot"></span>We're open now — call us</a>
+      <h1>New patients pay just <span class="price">$250</span> for a complete exam &amp; clean <span class="h1sub">All health funds accepted &middot; claim on the spot</span></h1>
       <span class="val">Valued at $394 — save $144</span>
       <p class="sub">Your first visit includes a <b>comprehensive check-up, full mouth clean, bitewing X-rays, oral cancer check, smile &amp; whitening assessments, intra-oral photography, fluoride</b> and a personalised treatment plan.</p>
       <div class="hero-cta">
@@ -387,28 +378,34 @@ function trackConv(label, url){
     </div>
     <div class="doc-grid">
       <article class="doc">
-        <div class="mono">SN</div>
+        <div class="ph"><img src="assets/dr-sharayu.png" alt="Dr Sharayu Narkhede, Principal Dentist at Synergy Dental Group" loading="lazy"></div>
+        <div class="bd">
         <span class="role">Principal Dentist</span>
         <h3>Dr Sharayu Narkhede</h3>
         <div class="quals">Masters of Dentistry — La Trobe University</div>
         <p>Dr Sharayu focuses on getting to know the person behind the smile, with personalised care in place of one-size-fits-all dentistry. She's passionate about confidence-boosting smile makeovers and creating positive first dental experiences for kids.</p>
         <div class="tags"><span class="tag">Smile makeovers</span><span class="tag">Root canal</span><span class="tag">Oral surgery</span><span class="tag">Kids dentistry</span></div>
+        </div>
       </article>
       <article class="doc">
-        <div class="mono">HY</div>
+        <div class="ph"><img src="assets/dr-hyun.png" alt="Dr Hyun Soo Yu, Principal Dentist at Synergy Dental Group" loading="lazy"></div>
+        <div class="bd">
         <span class="role">Principal Dentist</span>
         <h3>Dr Hyun Soo Yu</h3>
         <div class="quals">BDSc (Hons) — University of Melbourne</div>
         <p>Practising since 2006, Dr Hyun Soo is known for being extremely gentle, thorough and genuinely attentive — taking his time with every patient's concerns and continually training in the latest techniques.</p>
         <div class="tags"><span class="tag">General dentistry</span><span class="tag">Preventive care</span><span class="tag">Cosmetic</span><span class="tag">Restorative</span></div>
+        </div>
       </article>
       <article class="doc">
-        <div class="mono">DK</div>
+        <div class="ph"><img src="assets/dr-david.png" alt="Dr David Kim, Dentist at Synergy Dental Group" loading="lazy"></div>
+        <div class="bd">
         <span class="role">Dentist</span>
         <h3>Dr David Kim</h3>
         <div class="quals">Doctor of Dental Surgery — University of Melbourne</div>
         <p>Registered in both Australia and Canada, Dr David is committed to comfortable, stress-free visits and evidence-based care, with ongoing training in implantology, prosthodontics and endodontics — and a passion for community volunteering.</p>
         <div class="tags"><span class="tag">General dentistry</span><span class="tag">Implants</span><span class="tag">Restorative</span><span class="tag">Cosmetic</span></div>
+        </div>
       </article>
     </div>
   </div>
@@ -451,50 +448,6 @@ function trackConv(label, url){
       <div class="svc"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3v7c0 1.7 1.3 3 3 3s3-1.3 3-3V3M12 13v8"/><path d="M8 21h8"/></svg></span><h3>Implants &amp; All-on-X</h3><p>Permanent, natural-looking replacements for missing teeth — payment plans available.</p></div>
       <div class="svc"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg></span><h3>TMJ &amp; Sleep Dentistry</h3><p>Relief for jaw pain and clicking, plus splint therapy for snoring and restful sleep.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- SMILE GALLERY -->
-<section class="gallery" id="gallery">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow" style="color:var(--teal-lt)">Smile gallery</span>
-      <h2>Real transformations, real confidence</h2>
-      <p>Drag the slider to see the before and after — a glimpse of the precision and care behind every Synergy smile.</p>
-    </div>
-    <div class="gal-grid">
-      <article class="gal">
-        <div class="ba">
-          <img src="assets/gallery-veneers-before.jpg" alt="Before composite veneers treatment">
-          <div class="after-wrap"><img src="assets/gallery-veneers-after.jpg" alt="After composite veneers treatment"></div>
-          <span class="lab b">Before</span><span class="lab a">After</span>
-          <div class="divider"></div>
-          <input type="range" min="0" max="100" value="50" aria-label="Compare before and after: composite veneers">
-        </div>
-        <div class="cap"><h3>Composite Veneers</h3><p>Refining gaps, shape and shade for a naturally beautiful smile.</p></div>
-      </article>
-      <article class="gal">
-        <div class="ba">
-          <img src="assets/gallery-whitening-before.jpg" alt="Before in-chair teeth whitening">
-          <div class="after-wrap"><img src="assets/gallery-whitening-after.jpg" alt="After in-chair teeth whitening"></div>
-          <span class="lab b">Before</span><span class="lab a">After</span>
-          <div class="divider"></div>
-          <input type="range" min="0" max="100" value="50" aria-label="Compare before and after: in-chair whitening">
-        </div>
-        <div class="cap"><h3>In-Chair Whitening</h3><p>Instant, radiant results — safely brighter in a single visit.</p></div>
-      </article>
-      <article class="gal">
-        <div class="ba">
-          <img src="assets/gallery-restoration-before.jpg" alt="Before chipped edge restoration">
-          <div class="after-wrap"><img src="assets/gallery-restoration-after.jpg" alt="After chipped edge restoration"></div>
-          <span class="lab b">Before</span><span class="lab a">After</span>
-          <div class="divider"></div>
-          <input type="range" min="0" max="100" value="50" aria-label="Compare before and after: chipped edge restoration"> 
-        </div>
-        <div class="cap"><h3>Chipped Edge Restoration</h3><p>Rebuilding natural form and strength for a seamless finish.</p></div>
-      </article>
-    </div>
-    <p class="gal-note">Individual results vary. Images show treatments performed at Synergy Dental Group.</p>
   </div>
 </section>
 
@@ -617,18 +570,22 @@ function trackConv(label, url){
   <a class="b" href="https://synergydentalgroup.com.au/book-now/" target="_blank" rel="noopener" onclick="trackConv('book_now_click')">Book online</a>
 </div>
 
+
 <script>
-// Before/after sliders
-document.querySelectorAll('.ba').forEach(function(ba){
-  var range = ba.querySelector('input[type=range]');
-  var wrap = ba.querySelector('.after-wrap');
-  var divider = ba.querySelector('.divider');
-  range.addEventListener('input', function(){
-    var v = range.value;
-    wrap.style.clipPath = 'inset(0 0 0 ' + v + '%)';
-    divider.style.left = v + '%';
-  });
-});
+// Show "Open now" only during practice hours (Melbourne time):
+// Mon-Fri 8:30am-6:00pm, Sat 9:00am-1:00pm, Sun closed.
+(function(){
+  try{
+    var parts = new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Melbourne',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date());
+    var get = function(t){ var p = parts.find(function(x){return x.type===t}); return p ? p.value : '' };
+    var day = get('weekday');
+    var mins = parseInt(get('hour'),10)*60 + parseInt(get('minute'),10);
+    var open = false;
+    if(['Mon','Tue','Wed','Thu','Fri'].indexOf(day) > -1){ open = mins >= 510 && mins < 1080; }
+    else if(day === 'Sat'){ open = mins >= 540 && mins < 780; }
+    if(open){ document.body.classList.add('is-open'); }
+  }catch(e){}
+})();
 </script>
 
 </body>
