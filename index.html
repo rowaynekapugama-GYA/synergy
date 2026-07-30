@@ -39,7 +39,7 @@ function trackConv(label, url){
   :root{
     --navy:#1b2b4b;--navy-2:#122038;--navy-3:#253961;
     --teal:#2fc9bd;--teal-lt:#7ce8d8;--teal-deep:#149e96;
-    --ink:#182338;--ink-soft:#46536e;--muted:#7d8aa3;
+    --ink:#182338;--ink-soft:#46536e;--muted:#7d8aa3;--red:#d42a2a;
     --mist:#f4faf9;--mist-2:#e9f4f2;--white:#fff;--line:#dcE8e6;
     --display:'Sora',-apple-system,'Segoe UI',Arial,sans-serif;
     --sans:'Manrope',-apple-system,'Segoe UI',Arial,sans-serif;
@@ -105,7 +105,7 @@ function trackConv(label, url){
   .badge .d{width:7px;height:7px;border-radius:50%;background:var(--teal)}
   .hero h1{font-size:clamp(34px,5.6vw,52px);color:var(--navy)}
   .hero h1 .price{color:var(--teal-deep)}
-  .hero h1 .h1sub{display:block;font-size:.44em;font-weight:600;color:var(--ink-soft);letter-spacing:0;margin-top:14px}
+  .hero h1 .h1sub{display:block;font-size:.44em;font-weight:700;color:var(--red);letter-spacing:0;margin-top:14px}
   .hero .val{display:inline-block;background:var(--navy);color:#a8ded8;font-size:13px;font-weight:800;border-radius:50px;padding:5px 14px;margin-top:14px}
   .hero .sub{margin:14px 0 0;font-size:clamp(15px,2.4vw,17px);color:var(--ink-soft);max-width:540px}
   .hero .sub b{color:var(--navy)}
@@ -290,8 +290,8 @@ function trackConv(label, url){
       <span class="val">Valued at $394 — save $144</span>
       <p class="sub">Your first visit includes a <b>comprehensive check-up, full mouth clean, bitewing X-rays, oral cancer check, smile &amp; whitening assessments, intra-oral photography, fluoride</b> and a personalised treatment plan.</p>
       <div class="hero-cta">
-        <a class="btn btn-teal btn-lg" href="https://synergydentalgroup.com.au/book-now/" target="_blank" rel="noopener" onclick="trackConv('book_now_click')">Book my $250 visit</a>
-        <a class="btn btn-navy btn-lg" href="tel:0370366855" onclick="return trackConv('call_click')">&#9742;&nbsp;Call (03) 7036 6855</a>
+        <a class="btn btn-teal btn-lg" href="tel:0370366855" onclick="return trackConv('call_click')">&#9742;&nbsp;Call (03) 7036 6855</a>
+        <a class="btn btn-navy btn-lg" href="https://synergydentalgroup.com.au/book-now/" target="_blank" rel="noopener" onclick="trackConv('book_now_click')">Book my $250 visit</a>
       </div>
       <div class="trust-row">
         <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>All major funds &middot; HICAPS on the spot</span>
