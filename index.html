@@ -152,7 +152,7 @@ function trackConv(label, url){
   /* dentists */
   .docs{background:#fff}
   .doc-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
-  @media(min-width:720px){.doc-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(min-width:720px){.doc-grid{grid-template-columns:repeat(2,1fr);max-width:760px;margin-left:auto;margin-right:auto}}
   .doc{background:var(--mist);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 12px 28px rgba(27,43,75,.06);display:flex;flex-direction:column;padding:0}
   .doc .ph{aspect-ratio:1/1;overflow:hidden;background:linear-gradient(180deg,#e8eef2,#d8e4e8)}
   .doc .ph img{width:100%;height:100%;object-fit:cover;object-position:center top}
@@ -377,16 +377,6 @@ function trackConv(label, url){
       <p>Every member of our team brings genuine dedication, specialised skills and a warm chairside manner to every visit.</p>
     </div>
     <div class="doc-grid">
-      <article class="doc">
-        <div class="ph"><img src="assets/dr-sharayu.png" alt="Dr Sharayu Narkhede, Principal Dentist at Synergy Dental Group" loading="lazy"></div>
-        <div class="bd">
-        <span class="role">Principal Dentist</span>
-        <h3>Dr Sharayu Narkhede</h3>
-        <div class="quals">Masters of Dentistry — La Trobe University</div>
-        <p>Dr Sharayu focuses on getting to know the person behind the smile, with personalised care in place of one-size-fits-all dentistry. She's passionate about confidence-boosting smile makeovers and creating positive first dental experiences for kids.</p>
-        <div class="tags"><span class="tag">Smile makeovers</span><span class="tag">Root canal</span><span class="tag">Oral surgery</span><span class="tag">Kids dentistry</span></div>
-        </div>
-      </article>
       <article class="doc">
         <div class="ph"><img src="assets/dr-hyun.png" alt="Dr Hyun Soo Yu, Principal Dentist at Synergy Dental Group" loading="lazy"></div>
         <div class="bd">
