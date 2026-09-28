@@ -341,11 +341,42 @@ function trackConv(label, url){
       <p>Pick your appointment below and you're booked — it takes less than a minute.</p>
     </div>
     <div style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:0 14px 34px rgba(20,35,60,.08)">
-      <iframe id='zavy-online-booking' src='https://bookings.zavy360.com/booking/greystdentist/locations/8d73a356-e6a2-48e8-abe6-8079e1a838ce/reasons' frameborder='0' scrolling='no' width='100%' style='pointer-events: auto; border: none; min-height: 600px;'></iframe>
+      <iframe id='zavy-online-booking' src='https://bookings.zavy360.com/booking/greystdentist/locations/8d73a356-e6a2-48e8-abe6-8079e1a838ce/reasons' frameborder='0' scrolling='no' width='100%' style='pointer-events: auto; border: none; display: block; width: 100%; min-height: 640px;'></iframe>
     </div>
   </div>
 </section>
-<script>window.addEventListener("message", function(e) { if (e.data && e.data.type === "zavy-resize") { document.getElementById("zavy-online-booking").style.height = e.data.height + "px"; } });</script>
+<script>
+(function () {
+  var frame = document.getElementById('zavy-online-booking');
+  var gotResize = false;
+
+  function applyHeight(h) {
+    var px = parseInt(h, 10);
+    if (px > 0) {
+      gotResize = true;
+      frame.setAttribute('scrolling', 'no');
+      frame.style.height = (px + 24) + 'px'; // small buffer so the last row is never clipped
+    }
+  }
+
+  window.addEventListener('message', function (e) {
+    var d = e.data;
+    if (typeof d === 'string') { try { d = JSON.parse(d); } catch (err) { return; } }
+    if (d && d.type === 'zavy-resize' && d.height) { applyHeight(d.height); }
+  });
+
+  // Fallback: if the widget never reports its height, make the frame tall and scrollable
+  // so appointments are always reachable (especially on mobile).
+  function fallbackHeight() {
+    if (!gotResize) {
+      frame.setAttribute('scrolling', 'auto');
+      frame.style.height = Math.max(640, Math.round(window.innerHeight * 0.8)) + 'px';
+    }
+  }
+  setTimeout(fallbackHeight, 2500);
+  window.addEventListener('resize', fallbackHeight);
+})();
+</script>
 
 <!-- STATS -->
 <div class="stats">
