@@ -45,6 +45,21 @@ src="https://www.facebook.com/tr?id=26676860135343673&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
+<!-- Click-to-call / book event helper (same as the $250 LP) -->
+<script>
+function trackConv(label, url){
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({event: label});
+  if (typeof fbq === 'function') {
+    if (label === 'book_now_click') { fbq('track','Schedule'); }
+    if (label === 'call_click') { fbq('track','Contact'); }
+  }
+  if (typeof url !== 'undefined' && url) { window.open(url,'_blank','noopener'); return false; }
+  return true;
+}
+</script>
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -188,10 +203,27 @@ src="https://www.facebook.com/tr?id=26676860135343673&ev=PageView&noscript=1"
   .disclaimer p:last-child{margin-bottom:0}
   .disclaimer b{color:#22314e;font-weight:800}
 
+
+  /* header actions + CTAs (ported from the $250 LP) */
+  .hdr .row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .hdr .acts{display:flex;align-items:center;gap:10px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px}
+  .btn .arrw{width:17px;height:17px;flex:0 0 17px;animation:dip 1.6s ease-in-out infinite}
+  @keyframes dip{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+  .btn-hdr{padding:12px 20px;font-size:13.5px}
+  .btn-call{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:12px 18px;font-size:13.5px}
+  .btn-callhero{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.5);padding:16px 26px;font-size:15.5px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .hero-cta .btn{flex:1 1 auto;min-width:220px}
+  .open-now{display:none;align-items:center;gap:8px;background:#e7f9ee;border:1px solid #b7e6c9;color:#157347;border-radius:50px;padding:9px 15px;font-size:12.5px;font-weight:800;white-space:nowrap}
+  .open-now .odot{width:8px;height:8px;border-radius:50%;background:#22a35c;animation:opulse 2s infinite}
+  @keyframes opulse{0%{box-shadow:0 0 0 0 rgba(34,163,92,.5)}70%{box-shadow:0 0 0 7px rgba(34,163,92,0)}100%{box-shadow:0 0 0 0 rgba(34,163,92,0)}}
+  body.is-open .open-now{display:inline-flex}
+  @media(max-width:919px){.hdr .btn-call{display:none}.hdr .open-now{display:none!important}.btn-hdr{padding:11px 16px;font-size:12.5px}.hero-cta .btn{min-width:100%}}
   /* CDBS page additions */
-  .medicare-chip{display:inline-flex;flex-direction:column;align-items:flex-start;gap:6px;padding:16px 22px!important;background:#fff;border-radius:16px}
-  .medicare-chip img{max-height:62px;width:auto;display:block}
-  .medicare-chip b{font-size:13px;letter-spacing:3px;color:#16233f;font-weight:800}
+  .medicare-chip{display:inline-flex;flex-direction:column;align-items:flex-start;gap:9px;padding:0;background:transparent}
+  .medicare-chip img{max-height:96px;width:auto;display:block;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
+  .medicare-chip b{font-size:14px;letter-spacing:4px;color:#fff;font-weight:800;text-shadow:0 1px 6px rgba(0,0,0,.4)}
   .bookwrap{background:var(--mist);padding:46px 0 40px;border-bottom:1px solid var(--line)}
   .bookwrap .form-card{max-width:880px;margin:0 auto}
   @media(max-width:919px){
@@ -199,7 +231,7 @@ src="https://www.facebook.com/tr?id=26676860135343673&ev=PageView&noscript=1"
       linear-gradient(180deg,rgba(18,32,56,.9) 0%,rgba(18,32,56,.84) 55%,rgba(18,32,56,.96) 100%),
       url('/assets/cdbs-hero.jpg') 68% 24%/cover no-repeat;padding:30px 0 40px}
     .hero-copy .sub{font-size:16px}
-    .medicare-chip img{max-height:48px}
+    .medicare-chip img{max-height:70px}
     .bookwrap{padding:30px 0 28px}
     .bookwrap .form-card{padding:16px 12px}
   }
@@ -279,8 +311,10 @@ src="https://www.facebook.com/tr?id=26676860135343673&ev=PageView&noscript=1"
   .ftr p{margin:4px 0}
 
   /* sticky mobile CTA */
-  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:block;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(18,32,56,.92);backdrop-filter:blur(10px);box-shadow:0 -6px 18px rgba(18,32,56,.3)}
-  .mbar a{display:flex;align-items:center;justify-content:center;background:var(--tealgrad);color:var(--navy-2);font-weight:800;font-size:15px;border-radius:50px;padding:15px}
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:1px;background:var(--navy-2);box-shadow:0 -6px 18px rgba(18,32,56,.3);padding-bottom:env(safe-area-inset-bottom)}
+  .mbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;font-weight:800;font-size:14px;padding:16px 8px}
+  .mbar .c{background:var(--navy-2);color:#eafaf7}
+  .mbar .b{background:var(--tealgrad);color:var(--navy-2)}
   @media(min-width:920px){.mbar{display:none}}
   @media(max-width:919px){body{padding-bottom:78px}}
 </style>
@@ -290,7 +324,14 @@ src="https://www.facebook.com/tr?id=26676860135343673&ev=PageView&noscript=1"
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT6FHPLT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="hdr">
-  <div class="row"><span class="logobox"><img src="/assets/logo.png" alt="Synergy Dental Group"></span></div>
+  <div class="row">
+    <span class="logobox"><img src="/assets/logo.png" alt="Synergy Dental Group"></span>
+    <div class="acts">
+      <a class="open-now" href="tel:0363616721" onclick="return trackConv('call_click')"><span class="odot"></span>Open now</a>
+      <a class="btn btn-call" href="tel:0363616721" onclick="return trackConv('call_click')">&#9742;&nbsp;(03) 6361 6721</a>
+      <a class="btn btn-teal btn-hdr" href="#online-booking" onclick="trackConv('book_now_click');if(typeof fbq==='function'){fbq('trackCustom','ScrollToBooking');}">Book Now <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a>
+    </div>
+  </div>
 </header>
 
 <!-- HERO + FORM -->
@@ -304,11 +345,15 @@ src="https://www.facebook.com/tr?id=26676860135343673&ev=PageView&noscript=1"
         <div class="logo-group">
           <span class="lg-label">Child Dental Benefits Scheme</span>
           <div class="lg-row">
-            <span class="pl medicare-chip"><img src="/assets/medicare.png" alt="Medicare" ><b>BULK BILLED</b></span>
+            <span class="medicare-chip"><img src="/assets/medicare.png" alt="Medicare"><b>BULK BILLED</b></span>
           </div>
         </div>
       </div>
       <p class="sub">Eligible children and teenagers get up to <b>$1,158 of dental care over 2 calendar years</b>, bulk billed through Medicare under the Child Dental Benefits Scheme. Check-ups, cleans, fillings and more — <b>nothing to pay</b> for covered services at Synergy Dental Group, Parkdale.</p>
+      <div class="hero-cta">
+        <a class="btn btn-callhero" href="tel:0363616721" onclick="return trackConv('call_click')">&#9742;&nbsp;Call (03) 6361 6721</a>
+        <a class="btn btn-teal btn-lg" href="#online-booking" onclick="trackConv('book_now_click');if(typeof fbq==='function'){fbq('trackCustom','ScrollToBooking');}">Book a free check &amp; clean <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a>
+      </div>
       <div class="trust-row">
         <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Aged 0 to 17</span>
         <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Enrolled in Medicare</span>
@@ -378,7 +423,7 @@ src="https://www.facebook.com/tr?id=26676860135343673&ev=PageView&noscript=1"
     <span class="free-pill"><span class="d"></span>Free Check &amp; Clean For Kids &amp; Teens*</span>
     <h2>School holidays are the perfect time</h2>
     <p>Book your child’s bulk billed check and clean at Synergy Dental Group, Parkdale. No gap, no claim forms, no fuss.</p>
-    <a class="btn btn-teal" href="#online-booking" onclick="if(typeof fbq==='function'){fbq('trackCustom','ScrollToBooking');}">Book a bulk billed check &amp; clean</a>
+    <a class="btn btn-teal" href="#online-booking" onclick="trackConv('book_now_click');if(typeof fbq==='function'){fbq('trackCustom','ScrollToBooking');}">Book a bulk billed check &amp; clean <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a>
   </div>
 </section>
 
@@ -392,7 +437,7 @@ src="https://www.facebook.com/tr?id=26676860135343673&ev=PageView&noscript=1"
 </footer>
 
 <!-- Sticky mobile CTA -->
-<div class="mbar"><a href="#online-booking" onclick="if(typeof fbq==='function'){fbq('trackCustom','ScrollToBooking');}">Book a bulk billed check &amp; clean</a></div>
+<div class="mbar"><a class="c" href="tel:0363616721" onclick="return trackConv('call_click')">&#9742;&nbsp;Call now</a><a class="b" href="#online-booking" onclick="trackConv('book_now_click');if(typeof fbq==='function'){fbq('trackCustom','ScrollToBooking');}">Book online <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a></div>
 
 
 
@@ -422,6 +467,22 @@ src="https://www.facebook.com/tr?id=26676860135343673&ev=PageView&noscript=1"
   }
   setTimeout(function () { if (!gotResize) reclamp(); }, 2500);
   window.addEventListener('resize', reclamp);
+})();
+</script>
+<script>
+// Show "Open now" only during practice hours (Melbourne time):
+// Mon-Fri 8:30am-6:00pm, Sat 9:00am-1:00pm, Sun closed.
+(function(){
+  try{
+    var parts = new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Melbourne',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date());
+    var get = function(t){ var p = parts.find(function(x){return x.type===t}); return p ? p.value : '' };
+    var day = get('weekday');
+    var mins = parseInt(get('hour'),10)*60 + parseInt(get('minute'),10);
+    var open = false;
+    if(['Mon','Tue','Wed','Thu','Fri'].indexOf(day) > -1){ open = mins >= 510 && mins < 1080; }
+    else if(day === 'Sat'){ open = mins >= 540 && mins < 780; }
+    if(open){ document.body.classList.add('is-open'); }
+  }catch(e){}
 })();
 </script>
 </body>
