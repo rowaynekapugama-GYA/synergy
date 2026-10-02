@@ -220,6 +220,19 @@ function trackConv(label, url){
   @keyframes opulse{0%{box-shadow:0 0 0 0 rgba(34,163,92,.5)}70%{box-shadow:0 0 0 7px rgba(34,163,92,0)}100%{box-shadow:0 0 0 0 rgba(34,163,92,0)}}
   body.is-open .open-now{display:inline-flex}
   @media(max-width:919px){.hdr .btn-call{display:none}.hdr .open-now{display:none!important}.btn-hdr{padding:11px 16px;font-size:12.5px}.hero-cta .btn{min-width:100%}}
+
+  /* find us */
+  .findus{background:var(--mist);padding:52px 0 56px;border-top:1px solid var(--line)}
+  .findus-grid{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+  @media(min-width:880px){.findus-grid{grid-template-columns:.9fr 1.1fr;gap:30px}}
+  .findus-info{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 24px;display:grid;gap:16px;box-shadow:0 10px 24px rgba(27,43,75,.06)}
+  .fi b{display:block;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:var(--teal-deep);margin-bottom:4px}
+  .fi span{font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+  .fi a{color:var(--navy);font-weight:800;text-decoration:none}
+  .mapwrap{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 10px 24px rgba(27,43,75,.06)}
+  .mapwrap iframe{width:100%;height:340px;border:0;display:block}
+  .dirlink{display:block;text-align:center;font-weight:800;color:var(--teal-deep);padding:13px 0;text-decoration:none}
+  @media(max-width:879px){.mapwrap iframe{height:280px}.findus{padding:38px 0 42px}}
   /* CDBS page additions */
   .medicare-chip{display:inline-flex;flex-direction:column;align-items:flex-start;gap:9px;padding:0;background:transparent}
   .medicare-chip img{max-height:96px;width:auto;display:block;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
@@ -426,6 +439,27 @@ function trackConv(label, url){
     <a class="btn btn-teal" href="#online-booking" onclick="trackConv('book_now_click');if(typeof fbq==='function'){fbq('trackCustom','ScrollToBooking');}">Book a bulk billed check &amp; clean <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a>
   </div>
 </section>
+<!-- FIND US -->
+<section class="findus">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center;max-width:620px;margin:0 auto 24px">
+      <span class="eyebrow">Find us</span>
+      <h2>Synergy Dental Group, Parkdale</h2>
+    </div>
+    <div class="findus-grid">
+      <div class="findus-info">
+        <div class="fi"><b>Address</b><span><a href="https://maps.app.goo.gl/iNj2TfZ7xNRt87zZ8" target="_blank" rel="noopener">100 Lower Dandenong Rd, Parkdale VIC 3195</a><br>On-site and street parking available.</span></div>
+        <div class="fi"><b>Phone</b><span><a href="tel:0363616721" onclick="return trackConv('call_click')">(03) 6361 6721</a></span></div>
+        <div class="fi"><b>Hours</b><span>Mon to Fri 8:30am to 6pm &middot; Sat 9am to 1pm &middot; Sun closed</span></div>
+      </div>
+      <div class="mapwrap">
+        <iframe title="Map to Synergy Dental Group" src="https://www.google.com/maps?q=Synergy+Dental+Group+-+Dentist+Parkdale,+100+Lower+Dandenong+Rd,+Parkdale+VIC+3195&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a href="https://maps.app.goo.gl/iNj2TfZ7xNRt87zZ8" target="_blank" rel="noopener" class="dirlink">Get directions &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <footer class="ftr">
   <div class="wrap">
