@@ -167,6 +167,22 @@ function trackConv(label, url){
   .success-state h3{font-size:22px;color:var(--navy);margin-bottom:8px}
   .success-state p{font-size:14px;color:var(--ink-soft);margin:0}
 
+  /* logo strip (health funds + payment plans) */
+  .lstrip{background:#fff;border-bottom:1px solid var(--line);padding:22px 0}
+  .lstrip .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px 34px}
+  .lstrip .lbl{font-size:11.5px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;color:var(--teal-deep);white-space:nowrap}
+  .lstrip .lgs{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 36px}
+  .lstrip img{width:auto;height:auto;max-height:46px}
+  .lstrip .l-hicaps{max-height:27px}
+  .lstrip .l-denticare{max-height:58px}
+  .lstrip .l-smileright{max-height:62px}
+  .lstrip .l-supercare{max-height:50px}
+  @media(max-width:719px){
+    .lstrip{padding:18px 0}
+    .lstrip .wrap{gap:12px 20px}
+    .lstrip .lgs{gap:12px 22px}
+    .lstrip .l-hicaps{max-height:20px}.lstrip .l-denticare{max-height:44px}.lstrip .l-smileright{max-height:50px}.lstrip .l-supercare{max-height:34px}
+  }
   /* proof strip */
   .proof{background:#fff;padding:22px 0;border-bottom:1px solid var(--line)}
   .proof .row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 34px;align-items:center}
@@ -362,7 +378,7 @@ function trackConv(label, url){
           </div>
         </div>
       </div>
-      <p class="sub">Eligible children and teenagers get up to <b>$1,158 of dental care over 2 calendar years</b>, bulk billed through Medicare under the Child Dental Benefits Scheme. Check-ups, cleans, fillings and more — <b>nothing to pay</b> for covered services at Synergy Dental Group, Parkdale.</p>
+      <p class="sub">Eligible children and teenagers get up to <b>$1,158 of dental care over 2 calendar years</b>, bulk billed through Medicare under the Child Dental Benefits Scheme. Check-ups, cleans, fillings and more, with <b>nothing to pay</b> for covered services at Synergy Dental Group, Parkdale.</p>
       <div class="hero-cta">
         <a class="btn btn-callhero" href="tel:0363616721" onclick="return trackConv('call_click')">&#9742;&nbsp;Call (03) 6361 6721</a>
         <a class="btn btn-teal btn-lg" href="#online-booking" onclick="trackConv('book_now_click');if(typeof fbq==='function'){fbq('trackCustom','ScrollToBooking');}">Book a free check &amp; clean <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a>
@@ -390,12 +406,24 @@ function trackConv(label, url){
     </div>
     <div class="form-card" id="online-booking">
       <h3 style="margin:0 0 4px">Book your child’s check &amp; clean</h3>
-      <p class="fnote" style="margin:0 0 12px">Pick a time below and you’re booked — it takes less than a minute. Eligibility is confirmed with Medicare before any treatment begins.</p>
+      <p class="fnote" style="margin:0 0 12px">Pick a time below and you’re booked. It takes less than a minute. Eligibility is confirmed with Medicare before any treatment begins.</p>
       <iframe id='zavy-online-booking' src='https://bookings.zavy360.com/booking/greystdentist/locations/8d73a356-e6a2-48e8-abe6-8079e1a838ce/reasons' frameborder='0' scrolling='no' width='100%' style='pointer-events: auto; border: none; display: block; width: 100%; min-height: 520px; border-radius: 12px; background:#fff;'></iframe>
     </div>
   </div>
 </section>
 
+<!-- LOGO STRIP -->
+<div class="lstrip" aria-label="Health funds and payment options">
+  <div class="wrap">
+    <span class="lbl">All health funds &middot; Payment plans</span>
+    <div class="lgs">
+      <img class="l-hicaps" src="/assets/hicaps-lg.png" alt="HICAPS on-the-spot claiming">
+      <img class="l-denticare" src="/assets/denticare.png" alt="DentiCare payment plans">
+      <img class="l-smileright" src="/assets/smile-right.png" alt="Smile Right payment plans">
+      <img class="l-supercare" src="/assets/supercare.png" alt="SuperCare, pay with your super">
+    </div>
+  </div>
+</div>
 
 <!-- PROOF STRIP -->
 <div class="proof">
@@ -418,13 +446,13 @@ function trackConv(label, url){
     <div class="whygrid">
       <div class="why"><h3>Check-ups &amp; cleans</h3><p>Examinations, scale and cleans, and preventive care to keep little teeth on track.</p></div>
       <div class="why"><h3>X-rays &amp; fissure sealants</h3><p>Digital X-rays where needed, plus sealants that protect adult molars as they come through.</p></div>
-      <div class="why"><h3>Fillings &amp; extractions</h3><p>If something needs fixing, treatment is covered too — gently done by dentists great with kids.</p></div>
+      <div class="why"><h3>Fillings &amp; extractions</h3><p>If something needs fixing, treatment is covered too, gently done by dentists great with kids.</p></div>
       <div class="why"><h3>Root canals &amp; more</h3><p>Even bigger treatments are included under the scheme, up to your child’s available balance.</p></div>
     </div>
     <div class="disclaimer">
       <h4>Important information</h4>
       <p>*For eligible children and teenagers aged 0 to 17 under the Australian Government <b>Child Dental Benefits Scheme (CDBS)</b>. Covered services are capped at <b>$1,158 over 2 relevant calendar years</b>. Eligibility criteria apply, including Medicare enrolment and receipt of an eligible payment such as <b>Family Tax Benefit Part A</b>. The scheme <b>excludes orthodontic and cosmetic treatment</b> and services provided in hospital.</p>
-      <p>Your child’s eligibility and available balance are confirmed with Medicare <b>before any treatment begins</b>, so there are no surprises. Services covered by the CDBS are bulk billed with nothing to pay; any treatment outside the scheme will always be discussed and quoted first.</p>
+      <p>Your child’s eligibility and available balance are confirmed with Medicare <b>before any treatment begins</b>, so there are no surprises. Services covered by the CDBS are bulk billed with nothing to pay; any treatment outside the scheme will always be discussed and quoted first, with payment plans available through DentiCare and Smile Right.</p>
       <p>Synergy Dental Group, 100 Lower Dandenong Rd, Parkdale VIC 3195 &middot; (03) 6361 6721</p>
     </div>
   </div>
@@ -465,7 +493,7 @@ function trackConv(label, url){
   <div class="wrap">
     <span class="logobox"><img src="/assets/logo.png" alt="Synergy Dental Group"></span>
     <p><a href="https://maps.app.goo.gl/iNj2TfZ7xNRt87zZ8" target="_blank" rel="noopener" style="color:inherit">100 Lower Dandenong Rd, Parkdale VIC 3195</a> &middot; <a href="tel:0363616721">(03) 6361 6721</a></p>
-    <p style="margin-top:10px"><a href="/" style="color:#7ce8d8;font-weight:700">New Patient Offer</a></p>
+    <p style="margin-top:10px"><a href="/" style="color:#7ce8d8;font-weight:700">New Patient Offer</a> &middot; <a href="/emergency/" style="color:#7ce8d8;font-weight:700">Emergency Dentist</a></p>
     <p>&copy; 2026 Synergy Dental Group. All rights reserved. CDBS eligibility criteria apply; excludes orthodontic and cosmetic treatment.</p>
   </div>
 </footer>
