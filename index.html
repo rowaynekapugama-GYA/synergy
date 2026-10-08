@@ -199,6 +199,33 @@ function trackConv(label, url){
   .off .tc{font-size:11px;color:var(--muted);margin-top:10px;min-height:30px}
   .off.feature .tc{color:#8ea0bd}
 
+
+  /* new patient experience */
+  .firstvisit{background:#fff;border-top:1px solid var(--line)}
+  .fv-grid{display:grid;grid-template-columns:1fr;gap:22px;align-items:start}
+  @media(min-width:960px){.fv-grid{grid-template-columns:.78fr 1.22fr;gap:30px}}
+  .fv-card{background:linear-gradient(165deg,var(--navy-3),var(--navy) 60%,var(--navy-2));border:1px solid rgba(124,232,216,.4);border-radius:22px;padding:30px 28px;color:#fff;box-shadow:0 16px 38px rgba(18,32,56,.25);display:flex;flex-direction:column;gap:14px}
+  @media(min-width:960px){.fv-card{position:sticky;top:84px}}
+  .fv-kick{font-size:11px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;color:var(--teal-lt)}
+  .fv-card h2{font-size:clamp(25px,3.4vw,33px);color:#fff}
+  .fv-intro{font-size:14px;color:#c5d2e6;line-height:1.65;margin:0}
+  .fv-price{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.07);border:1px solid rgba(124,232,216,.35);border-radius:16px;padding:14px 18px}
+  .fv-price b{font-family:var(--display);font-size:40px;color:var(--teal-lt);line-height:1}
+  .fv-price span{font-size:12.5px;color:#c5d2e6;font-weight:700;line-height:1.5}
+  .fv-note{font-size:13px;color:#c5d2e6;margin:0}
+  .fv-card .btn-teal{width:100%}
+  .fv-call{width:100%;background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:14px 20px}
+  .fv-fine{font-size:11.5px;color:#8ea0bd;text-align:center}
+  .fv-steps-head{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal-deep);margin:4px 0 14px}
+  .fv-steps-grid{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:640px){.fv-steps-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:1000px){.fv-steps-grid{grid-template-columns:repeat(3,1fr)}}
+  .fv-step{background:var(--mist);border:1px solid var(--line);border-radius:16px;padding:17px 17px 15px;box-shadow:0 8px 18px rgba(27,43,75,.04)}
+  .fv-n{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;border-radius:50%;background:#fff;border:1.5px solid var(--teal);color:var(--teal-deep);font-weight:800;font-size:12.5px;margin-bottom:9px}
+  .fv-step h3{font-size:14.5px;font-family:var(--sans);font-weight:800;color:var(--navy);margin-bottom:4px}
+  .fv-step p{font-size:12.5px;color:var(--ink-soft);margin:0;line-height:1.55}
+  .fv-disc{font-size:11.5px;color:var(--muted);margin:16px 0 0;line-height:1.6}
+
   /* dentists */
   .docs{background:#fff}
   .doc-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
@@ -374,6 +401,39 @@ function trackConv(label, url){
   </div>
 </div>
 
+<!-- NEW PATIENT EXPERIENCE -->
+<section class="firstvisit" id="first-visit">
+  <div class="wrap">
+    <div class="fv-grid">
+      <div class="fv-card">
+        <span class="fv-kick">Our new patient experience</span>
+        <h2>Your first visit, done properly.</h2>
+        <p class="fv-intro">We know a new dentist can feel like a lot. So we've made your first appointment unhurried and transparent: one visit where you meet the team, see what we see, and leave with a clear picture of your smile.</p>
+        <div class="fv-price"><b>$250</b><span>one visit, one appointment<br>one fixed fee &middot; normally up to $528*</span></div>
+        <p class="fv-note">You'll know the cost before you walk in. Any further treatment is always discussed and agreed with you first.</p>
+        <a class="btn btn-teal btn-lg" href="#online-booking" onclick="trackConv('book_now_click')">Book your first visit</a>
+        <a class="btn fv-call" href="tel:0363616721" onclick="return trackConv('call_click')">&#9742;&nbsp;Call (03) 6361 6721</a>
+        <span class="fv-fine">New patients only. Synergy Dental Group, Parkdale.</span>
+      </div>
+      <div class="fv-steps">
+        <p class="fv-steps-head">What happens at your visit &middot; all nine steps, in one appointment</p>
+        <div class="fv-steps-grid">
+      <div class="fv-step"><span class="fv-n">01</span><h3>A relaxed welcome</h3><p>We start with a chat, not the chair: your history, any worries, and what you'd love from your smile.</p></div>
+      <div class="fv-step"><span class="fv-n">02</span><h3>Comprehensive examination</h3><p>Unhurried time with your dentist to check your teeth, gums and bite, and to hear what matters to you.</p></div>
+      <div class="fv-step"><span class="fv-n">03</span><h3>Professional photography</h3><p>Photos inside and outside your mouth, so you can see exactly what we see on screen.</p></div>
+      <div class="fv-step"><span class="fv-n">04</span><h3>X-rays included*</h3><p>A look between your teeth and below the gumline, where early problems are easy to miss.</p></div>
+      <div class="fv-step"><span class="fv-n">05</span><h3>Oral cancer check</h3><p>A quick, gentle screening of your mouth, tongue and throat. Simple, and worth doing.</p></div>
+      <div class="fv-step"><span class="fv-n">06</span><h3>Tooth shade assessment</h3><p>We record your natural tooth shade, a useful starting point if you ever consider whitening.</p></div>
+      <div class="fv-step"><span class="fv-n">07</span><h3>Scale, clean &amp; polish</h3><p>Built-up tartar removed and every surface polished. You'll feel the difference walking out.</p></div>
+      <div class="fv-step"><span class="fv-n">08</span><h3>Fluoride treatment</h3><p>A protective layer applied after your clean to help strengthen your enamel.</p></div>
+      <div class="fv-step"><span class="fv-n">09</span><h3>Personalised treatment plan</h3><p>Your options explained in plain language, with costs in writing, and time to decide. No pressure.</p></div>
+        </div>
+        <p class="fv-disc">*One fixed fee of $250 for new patients, normally up to $528 based on our usual fees for the items included. All X-rays required are included, excluding CBCT scans. Any further treatment is always discussed, quoted and agreed with you first. T&amp;Cs apply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ONLINE BOOKING (Zavy360) -->
 <section class="onlinebook" id="online-booking" style="background:#fff;padding:44px 0 30px">
   <div class="wrap" style="max-width:1080px;margin:0 auto;padding:0 20px">
@@ -450,8 +510,8 @@ function trackConv(label, url){
         <span class="kick">New patients</span>
         <h3>The First Visit</h3>
         <div class="price">$250</div>
-        <div class="was">incl. any X-rays required</div>
-        <p>A full examination, a professional clean and any X-rays you need, all inside the one fee, so nothing gets added on afterwards. We claim through your fund on the spot and tell you your out-of-pocket before we start.</p>
+        <div class="was">one fixed fee &middot; normally up to $528*</div>
+        <p>All nine steps of a proper first visit in one appointment, including any X-rays you need*, so nothing gets added on afterwards. We claim through your fund on the spot and tell you your out-of-pocket before we start. <a href="#first-visit" style="color:var(--teal-lt);font-weight:800">See everything included &darr;</a></p>
         <a class="btn btn-teal" href="#online-booking" onclick="trackConv('book_now_click')">Book Now</a>
         <span class="tc">T&amp;Cs apply. Eligible children are bulk billed under the CDBS. Ask us to check.</span>
       </article>
@@ -486,6 +546,9 @@ function trackConv(label, url){
     <p class="book-or" style="margin-top:22px;font-size:12.5px">*Early release of super for dental treatment is subject to ATO eligibility criteria and approval. SuperCare is an independent service that assists with the application. Payment plans are subject to approval and the provider's terms.</p>
   </div>
 </section>
+
+
+
 
 <!-- DENTISTS -->
 <section class="docs" id="dentists">
@@ -647,7 +710,7 @@ function trackConv(label, url){
       <h2>Frequently asked questions</h2>
     </div>
     <div class="faq-list">
-      <details class="faq-item"><summary>What's included in The First Visit for new patients?<span class="pl">+</span></summary><div class="a">Everything for a complete first visit: a comprehensive check-up, full mouth clean for tartar removal, bitewing X-rays, an oral cancer check, whitening and smile assessments, intra and extra oral photography, fluoride protection and a personalised treatment plan, valued at $394, for $250. T&amp;Cs apply.</div></details>
+      <details class="faq-item"><summary>What's included in The First Visit for new patients?<span class="pl">+</span></summary><div class="a">All nine steps of a proper first visit in one appointment: a relaxed welcome, comprehensive examination, professional photography inside and outside your mouth, any X-rays required (excluding CBCT), an oral cancer check, tooth shade assessment, scale, clean and polish, fluoride treatment and a personalised treatment plan with costs in writing. One fixed fee of $250 for new patients, normally up to $528. T&amp;Cs apply.</div></details>
       <details class="faq-item"><summary>Which health funds do you accept?<span class="pl">+</span></summary><div class="a">All major health funds are accepted, with on-the-spot claiming through HICAPS so you only pay the gap and know your costs up front. We're also a Child Dental Benefits Schedule (CDBS) provider for eligible children.</div></details>
       <details class="faq-item"><summary>Do you offer emergency appointments?<span class="pl">+</span></summary><div class="a">Yes. For toothache, broken or knocked-out teeth, lost fillings or swelling, call (03) 6361 6721 as soon as possible. We prioritise emergencies and can usually offer same-day or next-day care for the Parkdale and Mordialloc area.</div></details>
       <details class="faq-item"><summary>I'm nervous about the dentist. Can you help?<span class="pl">+</span></summary><div class="a">Absolutely. Our team is experienced with anxious patients: we explain every step, use gentle techniques, never rush you, and offer breaks whenever needed. Many patients tell us their first visit changed how they feel about the dentist.</div></details>
