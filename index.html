@@ -204,7 +204,7 @@ function trackConv(label, url){
   .firstvisit{background:#fff;border-top:1px solid var(--line)}
   .firstvisit .wrap{max-width:1200px}
   .fv-grid{display:grid;grid-template-columns:1fr;gap:22px;align-items:start}
-  @media(min-width:960px){.fv-grid{grid-template-columns:.72fr 1.28fr;gap:34px;align-items:center}}
+  @media(min-width:960px){.fv-grid{grid-template-columns:.78fr 1.22fr;gap:34px;align-items:stretch}}
   .fv-card{background:linear-gradient(165deg,var(--navy-3),var(--navy) 60%,var(--navy-2));border:1px solid rgba(124,232,216,.4);border-radius:22px;padding:28px 26px;color:#fff;box-shadow:0 16px 38px rgba(18,32,56,.25);display:flex;flex-direction:column;gap:14px}
   .fv-kick{font-size:11px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;color:var(--teal-lt)}
   .fv-card h2{font-size:clamp(25px,3.4vw,33px);color:#fff}
@@ -216,9 +216,11 @@ function trackConv(label, url){
   .fv-card .btn-teal{width:100%}
   .fv-call{width:100%;background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.4);padding:14px 20px}
   .fv-fine{font-size:11.5px;color:#8ea0bd;text-align:center}
-  .fv-video{display:flex;flex-direction:column;gap:10px}
-  .fv-player{position:relative;width:100%;aspect-ratio:1/1;border-radius:22px;overflow:hidden;background:var(--navy-2);box-shadow:0 16px 38px rgba(18,32,56,.25)}
+  .fv-video{position:relative;display:flex;align-items:stretch;justify-content:center;min-width:0}
+  .fv-player{position:relative;aspect-ratio:1/1;height:100%;max-width:100%;border-radius:22px;overflow:hidden;background:var(--navy-2);box-shadow:0 16px 38px rgba(18,32,56,.25)}
+  @media(max-width:959px){.fv-player{height:auto;width:100%}}
   .fv-player iframe{position:absolute;left:50%;top:50%;width:100%;height:178%;transform:translate(-50%,-50%);border:0;pointer-events:none}
+  .fv-vidcap{position:absolute;left:14px;bottom:14px;z-index:2;background:rgba(18,32,56,.78);color:#eafaf7;font-size:12.5px;font-weight:700;border-radius:50px;padding:7px 14px;backdrop-filter:blur(4px);pointer-events:none}
   .fv-playbtn{position:absolute;inset:0;width:100%;height:100%;background:transparent;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
   .fv-playcirc{width:84px;height:84px;border-radius:50%;background:var(--tealgrad);color:var(--navy-2);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px rgba(0,0,0,.4);transition:transform .15s,opacity .25s}
   .fv-playbtn:hover .fv-playcirc{transform:scale(1.06)}
@@ -228,7 +230,6 @@ function trackConv(label, url){
   .fv-player.is-playing:hover .fv-playcirc{opacity:1}
   .fv-player.is-playing .ic-play{display:none}
   .fv-player.is-playing .ic-pause{display:block}
-  .fv-vidcap{font-size:13px;font-weight:700;color:var(--ink-soft);text-align:center;margin:0}
   .fv-below{margin-top:30px}
   .fv-steps-head{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--teal-deep);margin:4px 0 14px}
   .fv-steps-grid{display:grid;grid-template-columns:1fr;gap:12px}
@@ -436,8 +437,8 @@ function trackConv(label, url){
           <button class="fv-playbtn" id="fv-playbtn" type="button" aria-label="Play video">
             <span class="fv-playcirc"><svg class="ic-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></svg><svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.6v14H7zM13.4 5H17v14h-3.6z"/></svg></span>
           </button>
+          <span class="fv-vidcap">Dr Hyun Soo Yu &middot; your first visit</span>
         </div>
-        <p class="fv-vidcap">Dr Hyun Soo Yu on what happens at your first visit</p>
       </div>
     </div>
     <div class="fv-below">
@@ -779,6 +780,18 @@ function trackConv(label, url){
   var wrap = document.getElementById('fv-player');
   if (!frame || !btn || !wrap) return;
   var playing = false;
+  var vw = 0, vh = 0;
+  function fit(){
+    if (!(vw > 0 && vh > 0)) return;
+    var r = vw / vh; // video aspect
+    if (r >= 1) { // landscape or square: match height, overflow the sides
+      frame.style.height = '100.5%';
+      frame.style.width = (r * 100.5) + '%';
+    } else { // portrait: match width, overflow top and bottom
+      frame.style.width = '100.5%';
+      frame.style.height = (100.5 / r) + '%';
+    }
+  }
   function send(method){ try{ frame.contentWindow.postMessage(JSON.stringify({method: method}), 'https://player.vimeo.com'); }catch(e){} }
   btn.addEventListener('click', function(){
     if (playing) { send('pause'); } else { send('play'); }
@@ -788,7 +801,15 @@ function trackConv(label, url){
     var d = e.data;
     if (typeof d === 'string') { try { d = JSON.parse(d); } catch(err){ return; } }
     if (!d) return;
-    if (d.event === 'ready') { send('addEventListener'); try{ frame.contentWindow.postMessage(JSON.stringify({method:'addEventListener', value:'play'}), 'https://player.vimeo.com'); frame.contentWindow.postMessage(JSON.stringify({method:'addEventListener', value:'pause'}), 'https://player.vimeo.com'); frame.contentWindow.postMessage(JSON.stringify({method:'addEventListener', value:'finish'}), 'https://player.vimeo.com'); }catch(err){} }
+    if (d.event === 'ready') {
+      try{
+        ['play','pause','finish'].forEach(function(ev){ frame.contentWindow.postMessage(JSON.stringify({method:'addEventListener', value:ev}), 'https://player.vimeo.com'); });
+        frame.contentWindow.postMessage(JSON.stringify({method:'getVideoWidth'}), 'https://player.vimeo.com');
+        frame.contentWindow.postMessage(JSON.stringify({method:'getVideoHeight'}), 'https://player.vimeo.com');
+      }catch(err){}
+    }
+    if (d.method === 'getVideoWidth') { vw = d.value; fit(); }
+    if (d.method === 'getVideoHeight') { vh = d.value; fit(); }
     if (d.event === 'play') { playing = true; wrap.classList.add('is-playing'); btn.setAttribute('aria-label','Pause video'); }
     if (d.event === 'pause' || d.event === 'finish') { playing = false; wrap.classList.remove('is-playing'); btn.setAttribute('aria-label','Play video'); }
   });
