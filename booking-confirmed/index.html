@@ -19,7 +19,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-352328792');
-  gtag('config', 'AW-352328792/1pPlCKXk8YkdENi4gKgB', {'phone_conversion_number': '(03) 6361 6721'});
+  gtag('config', 'AW-352328792/1pPlCKXk8YkdENi4gKgB', {
+    'phone_conversion_number': '(03) 6361 6721',
+    'phone_conversion_callback': function (formatted_number, mobile_number) {
+      var digits = String(mobile_number || formatted_number).replace(/[^\d+]/g, '');
+      document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
+        if (a.getAttribute('href').replace(/\D/g, '') === '0363616721') a.setAttribute('href', 'tel:' + digits);
+      });
+      var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n;
+      while ((n = w.nextNode())) {
+        if (n.nodeValue.indexOf('(03) 6361 6721') !== -1) n.nodeValue = n.nodeValue.split('(03) 6361 6721').join(formatted_number);
+      }
+    }
+  });
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
