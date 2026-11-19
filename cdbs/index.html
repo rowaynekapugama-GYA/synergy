@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#122038">
-<title>Free Check and Clean for Kids &amp; Teens | CDBS Bulk Billed | Synergy Dental Group Parkdale</title>
+<title>Check Your Child's CDBS Eligibility | Kids' Dental Bulk Billed | Synergy Dental Group Parkdale</title>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
-<meta name="description" content="Child Dental Benefits Scheme at Synergy Dental Group Parkdale. Eligible kids and teens get up to $1,158 of dental care bulk billed through Medicare. Book online.">
+<meta name="description" content="Check if your child is eligible for the Child Dental Benefits Scheme. Eligible kids and teens get up to $1,158 of dental care bulk billed through Medicare. Answer a few quick questions and Synergy Dental Group, Parkdale will check eligibility for you.">
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -346,6 +346,91 @@ function trackConv(label, url){
   .mbar .b{background:var(--tealgrad);color:var(--navy-2)}
   @media(min-width:920px){.mbar{display:none}}
   @media(max-width:919px){body{padding-bottom:78px}}
+
+  /* ===== CDBS eligibility check ===== */
+  .hero{padding:34px 0 52px}
+  .hero-grid{align-items:start}
+  .hero-callline{margin:18px 0 0;font-size:14.5px;color:#c9d5ea}
+  .hero-callline a{color:#fff;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+  .check-card{scroll-margin-top:16px}
+  .ck-top{margin-bottom:14px}
+  .ck-badge{display:inline-block;background:rgba(0,149,106,.12);color:#00774f;font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;border-radius:50px;padding:5px 12px}
+  .check-card h2{font-size:24px;color:var(--navy);margin:10px 0 4px}
+  .ck-sub{font-size:13.5px;color:var(--ink-soft);margin:0 0 14px}
+  .ck-progress{display:flex;align-items:center;gap:8px}
+  .ck-pip{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800;background:var(--mist);border:1.5px solid var(--line);color:var(--muted);transition:all .2s}
+  .ck-pip.is-on{background:var(--tealgrad);border-color:transparent;color:var(--navy-2)}
+  .ck-pip.is-done{background:#e7f6f3;border-color:var(--teal);color:var(--teal-deep)}
+  .ck-line{flex:1;height:2px;background:var(--line);border-radius:2px}
+  .ck-step{border:0;margin:0;padding:0;min-width:0}
+  .ck-legend{font-size:11.5px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--teal-deep);margin:4px 0 12px;padding:0}
+  .ck-q{font-size:15px;font-weight:800;color:var(--navy);margin:4px 0 9px;line-height:1.4}
+  .check-card .opt-grid{margin-bottom:16px}
+  .check-card .opt span{padding:11px 20px;font-size:14px}
+  .ck-note{background:#f1faf7;border:1px solid #bfe7da;color:#1d5c49;border-radius:12px;padding:12px 14px;font-size:13.5px;margin:0 0 14px;line-height:1.5}
+  .ck-note a{color:#00774f;font-weight:800;text-decoration:underline}
+  .ck-note.ck-stop{background:#fff7ed;border-color:#f3d2a7;color:#7a4b14}
+  .ck-note.ck-stop a{color:#7a4b14}
+  .field label i{font-style:normal;color:var(--red)}
+  .field input[type=date]{min-height:50px}
+  .field.has-error input{border-color:#d9534f;background:#fff8f8}
+  .ferr{display:block;color:#b02a2a;font-size:12.5px;font-weight:700;margin-top:5px;min-height:0}
+  .ferr:empty{display:none}
+  .fhelp{display:block;font-size:12px;color:var(--muted);margin:4px 0 0;line-height:1.45}
+  .ck-medi{grid-template-columns:1.6fr 1fr}
+  .ck-medihelp{margin:-4px 0 14px}
+  .ck-nav{display:flex;align-items:center;gap:12px;margin-top:6px}
+  .ck-nav .submit-btn{flex:1;margin-top:0}
+  .ck-back{background:none;border:0;color:var(--ink-soft);font-weight:800;font-size:14px;cursor:pointer;padding:12px 4px;font-family:var(--sans)}
+  .ck-back:hover{color:var(--navy)}
+  .ck-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-soft);line-height:1.5;margin:6px 0 6px;cursor:pointer}
+  .ck-consent input{width:20px;height:20px;flex:0 0 20px;margin-top:1px;accent-color:var(--teal-deep)}
+  .submit-btn[disabled]{opacity:.65;cursor:wait}
+  .success-state h3{font-size:22px}
+  .ck-s-acts{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+  .ck-s-call{background:var(--mist);border:1.5px solid var(--line);color:var(--navy);padding:14px 20px}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  /* how it works */
+  .how{background:#fff;padding:56px 0}
+  .how-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
+  @media(min-width:760px){.how-grid{grid-template-columns:repeat(3,1fr)}}
+  .how-step{background:var(--mist);border:1px solid var(--line);border-radius:18px;padding:22px 20px}
+  .how-n{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--teal-lt);font-weight:800;margin-bottom:12px}
+  .how-step h3{font-size:16px;font-family:var(--sans);font-weight:800;color:var(--navy);margin-bottom:5px}
+  .how-step p{font-size:13.5px;color:var(--ink-soft);margin:0}
+  .how-cta{text-align:center;margin-top:26px}
+  /* what's covered grid (was unstyled) */
+  .whywrap{background:var(--mist-2)}
+  .whygrid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
+  @media(min-width:680px){.whygrid{grid-template-columns:1fr 1fr}}
+  @media(min-width:1000px){.whygrid{grid-template-columns:repeat(4,1fr)}}
+  .whygrid .why{display:block}
+  @media(max-width:919px){
+    .hero{padding:24px 0 34px}
+    .hero-copy .trust-row,.hero-copy .hero-stats,.hero-callline{display:none}
+    .hero .hero-logos{margin-top:12px}
+    .hero-copy .sub{margin-top:12px}
+    .check-card{margin-top:4px}
+    .ck-medi{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:420px){.field-row{grid-template-columns:1fr}.ck-medi{grid-template-columns:1.5fr 1fr}}
+
+  .sub-m{display:none}
+  .hero h1{font-size:clamp(30px,4.4vw,54px)}
+  .mbar .arrw{width:17px;height:17px;flex:0 0 17px}
+  .mbar a{white-space:nowrap}
+  @media(max-width:919px){
+    .hero{padding:16px 0 30px}
+    .hero .free-pill{font-size:11.5px;letter-spacing:1.2px;padding:8px 14px;margin-bottom:10px}
+    .hero .stars-row{margin-bottom:8px;font-size:13.5px}
+    .hero .stars-row .stars svg{width:16px;height:16px;flex-basis:16px}
+    .hero h1{font-size:26px;line-height:1.15}
+    .hero .hero-logos{display:none}
+    .hero-copy .sub:not(.sub-m){display:none}
+    .hero-copy .sub-m{display:block;font-size:15px;margin:10px 0 0}
+    .check-card{margin-top:0;padding:20px 16px 18px}
+    .check-card h2{font-size:21px;margin-top:8px}
+  }
 </style>
 </head>
 <body>
@@ -358,18 +443,18 @@ function trackConv(label, url){
     <div class="acts">
       <a class="open-now" href="tel:0363616721" onclick="return trackConv('call_click')"><span class="odot"></span>Open now</a>
       <a class="btn btn-call" href="tel:0363616721" onclick="return trackConv('call_click')">&#9742;&nbsp;(03) 6361 6721</a>
-      <a class="btn btn-teal btn-hdr" href="#online-booking" onclick="trackConv('book_now_click');if(typeof fbq==='function'){fbq('trackCustom','ScrollToBooking');}">Book Now <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a>
+      <a class="btn btn-teal btn-hdr" href="#check" onclick="trackConv('cdbs_check_click')">Check eligibility <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a>
     </div>
   </div>
 </header>
 
-<!-- HERO + FORM -->
-<section class="hero" id="top" style="padding-top:34px">
+<!-- HERO + ELIGIBILITY CHECK -->
+<section class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="free-pill"><span class="d"></span>Free Check &amp; Clean For Kids &amp; Teens*</span>
       <div class="stars-row"><span class="stars" role="img" aria-label="5 star rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z"/></svg></span><span><b>5.0</b> · 105+ Google reviews</span></div>
-      <h1>Kids’ dental, <em>bulk billed through Medicare.*</em></h1>
+      <h1>Check if your child is eligible for the <em>Child Dental Benefits Scheme</em></h1>
       <div class="hero-logos">
         <div class="logo-group">
           <span class="lg-label">Child Dental Benefits Scheme</span>
@@ -378,39 +463,87 @@ function trackConv(label, url){
           </div>
         </div>
       </div>
-      <p class="sub">Eligible children and teenagers get up to <b>$1,158 of dental care over 2 calendar years</b>, bulk billed through Medicare under the Child Dental Benefits Scheme. Check-ups, cleans, fillings and more, with <b>nothing to pay</b> for covered services at Synergy Dental Group, Parkdale.</p>
-      <div class="hero-cta">
-        <a class="btn btn-callhero" href="tel:0363616721" onclick="return trackConv('call_click')">&#9742;&nbsp;Call (03) 6361 6721</a>
-        <a class="btn btn-teal btn-lg" href="#online-booking" onclick="trackConv('book_now_click');if(typeof fbq==='function'){fbq('trackCustom','ScrollToBooking');}">Book a free check &amp; clean <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a>
-      </div>
+      <p class="sub sub-m">Up to <b>$1,158 of dental care</b>, bulk billed through Medicare. We check your child&#8217;s eligibility for you.</p>
+      <p class="sub">Eligible children aged 0 to 17 can get up to <b>$1,158 of dental care over 2 calendar years</b>, bulk billed through Medicare. Answer a few quick questions and our team will <b>check your child&#8217;s eligibility with Medicare for you</b>, then call to book their check and clean.</p>
       <div class="trust-row">
-        <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Aged 0 to 17</span>
-        <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Enrolled in Medicare</span>
-        <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Family receives FTB Part A*</span>
+        <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Takes about a minute</span>
+        <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>We check with Medicare for you</span>
+        <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Nothing to pay for covered services*</span>
       </div>
       <div class="hero-stats">
         <div class="hstat"><b>$1,158</b><span>Benefit cap over 2 calendar years</span></div>
         <div class="hstat"><b>$0</b><span>To pay for covered services</span></div>
-        <div class="hstat"><b>0–17</b><span>Ages covered by the scheme</span></div>
+        <div class="hstat"><b>0&#8211;17</b><span>Ages covered by the scheme</span></div>
       </div>
+      <p class="hero-callline">Prefer to talk? Call <a href="tel:0363616721" onclick="return trackConv('call_click')">(03) 6361 6721</a></p>
     </div>
 
+    <div class="form-card check-card" id="check">
+      <div class="ck-top">
+        <span class="ck-badge">Free eligibility check</span>
+        <h2>Is your child eligible?</h2>
+        <p class="ck-sub">Three quick steps. We check with Medicare and call you back.</p>
+        <div class="ck-progress" aria-hidden="true"><span class="ck-pip is-on">1</span><i class="ck-line"></i><span class="ck-pip">2</span><i class="ck-line"></i><span class="ck-pip">3</span></div>
       </div>
-</section>
-<!-- ONLINE BOOKING -->
-<section class="bookwrap">
-  <div class="wrap">
-    <div class="sec-head" style="text-align:center;max-width:620px;margin:0 auto 20px">
-      <span class="eyebrow">Book online</span>
-      <h2>Choose a time that suits you</h2>
-    </div>
-    <div class="form-card" id="online-booking">
-      <h3 style="margin:0 0 4px">Book your child’s check &amp; clean</h3>
-      <p class="fnote" style="margin:0 0 12px">Pick a time below and you’re booked. It takes less than a minute. Eligibility is confirmed with Medicare before any treatment begins.</p>
-      <iframe id='zavy-online-booking' src='https://bookings.zavy360.com/booking/greystdentist/locations/8d73a356-e6a2-48e8-abe6-8079e1a838ce/reasons' frameborder='0' scrolling='no' width='100%' style='pointer-events: auto; border: none; display: block; width: 100%; min-height: 520px; border-radius: 12px; background:#fff;'></iframe>
+
+      <form id="cdbs-form" novalidate autocomplete="on">
+        <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+        <fieldset class="ck-step is-active" data-step="1">
+          <legend class="ck-legend">Step 1 of 3 &middot; Quick questions</legend>
+          <p class="ck-q">Is your child aged between 0 and 17?</p>
+          <div class="opt-grid" data-group="ageOk"><label class="opt"><input type="radio" name="ageOk" value="Yes"><span>Yes</span></label><label class="opt"><input type="radio" name="ageOk" value="No"><span>No</span></label></div>
+          <p class="ck-q">Does your family receive Family Tax Benefit Part A, or another eligible payment from Services Australia?</p>
+          <div class="opt-grid" data-group="familyPayment"><label class="opt"><input type="radio" name="familyPayment" value="Yes"><span>Yes</span></label><label class="opt"><input type="radio" name="familyPayment" value="No"><span>No</span></label><label class="opt"><input type="radio" name="familyPayment" value="Not sure"><span>Not sure</span></label></div>
+          <div class="ck-note ck-stop" id="ck-age-no" hidden>The CDBS covers children aged 0 to 17. We&#8217;d still love to look after your family: call <a href="tel:0363616721" onclick="return trackConv('call_click')">(03) 6361 6721</a> or <a href="#online-booking">book online</a>.</div>
+          <div class="ck-note" id="ck-ftb-no" hidden>Some families qualify through other payments. Pop your details in and we&#8217;ll check with Medicare for you.</div>
+          <small class="ferr ck-step-err" aria-live="polite"></small>
+          <button type="button" class="btn btn-teal submit-btn" data-next>Next: your child&#8217;s details</button>
+        </fieldset>
+
+        <fieldset class="ck-step" data-step="2" hidden>
+          <legend class="ck-legend">Step 2 of 3 &middot; Your child</legend>
+          <div class="field-row">
+            <div class="field"><label for="ck-childFirstName">Child&#8217;s first name <i>*</i></label><input id="ck-childFirstName" name="childFirstName" type="text" autocomplete="off" maxlength="60" required><small class="ferr" aria-live="polite"></small></div>
+            <div class="field"><label for="ck-childLastName">Child&#8217;s last name <i>*</i></label><input id="ck-childLastName" name="childLastName" type="text" autocomplete="off" maxlength="60" required><small class="ferr" aria-live="polite"></small></div>
+          </div>
+          <div class="field"><label for="ck-childDob">Child&#8217;s date of birth <i>*</i></label><input id="ck-childDob" name="childDob" type="date" autocomplete="off" required><small class="ferr" aria-live="polite"></small></div>
+          <div class="field-row ck-medi">
+            <div class="field"><label for="ck-medicareNumber">Medicare card number <i>*</i></label><input id="ck-medicareNumber" name="medicareNumber" type="text" inputmode="numeric" autocomplete="off" maxlength="12" placeholder="1234 56789 1" required><small class="ferr" aria-live="polite"></small></div>
+            <div class="field"><label for="ck-medicareIrn">Ref number (IRN) <i>*</i></label><input id="ck-medicareIrn" name="medicareIrn" type="text" inputmode="numeric" autocomplete="off" maxlength="1" placeholder="e.g. 2" required><small class="ferr" aria-live="polite"></small></div>
+          </div>
+          <p class="fhelp ck-medihelp">Both are on your Medicare card. The ref number is the single digit printed next to your child&#8217;s name.</p>
+          <div class="ck-nav"><button type="button" class="ck-back" data-back>&larr; Back</button><button type="button" class="btn btn-teal submit-btn" data-next>Next: your details</button></div>
+        </fieldset>
+
+        <fieldset class="ck-step" data-step="3" hidden>
+          <legend class="ck-legend">Step 3 of 3 &middot; Your details</legend>
+          <div class="field-row">
+            <div class="field"><label for="ck-parentFirstName">Your first name <i>*</i></label><input id="ck-parentFirstName" name="parentFirstName" type="text" autocomplete="given-name" maxlength="60" required><small class="ferr" aria-live="polite"></small></div>
+            <div class="field"><label for="ck-parentLastName">Your last name <i>*</i></label><input id="ck-parentLastName" name="parentLastName" type="text" autocomplete="family-name" maxlength="60" required><small class="ferr" aria-live="polite"></small></div>
+          </div>
+          <div class="field"><label for="ck-phone">Phone number <i>*</i></label><input id="ck-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" required><small class="ferr" aria-live="polite"></small></div>
+          <div class="field"><label for="ck-email">Email <i>*</i></label><input id="ck-email" name="email" type="email" autocomplete="email" maxlength="120" required><small class="ferr" aria-live="polite"></small></div>
+          <div class="field"><label for="ck-suburb">Suburb or postcode <i>*</i></label><input id="ck-suburb" name="suburb" type="text" autocomplete="postal-code" maxlength="60" required><small class="ferr" aria-live="polite"></small></div>
+          <label class="ck-consent"><input type="checkbox" name="consent" value="Yes" required><span>I&#8217;m the child&#8217;s parent or guardian, and I agree to Synergy Dental Group using these details to check my child&#8217;s CDBS eligibility with Medicare and to contact me about it.</span></label>
+          <small class="ferr ck-consent-err" aria-live="polite"></small>
+          <div class="ck-nav"><button type="button" class="ck-back" data-back>&larr; Back</button><button type="submit" class="btn btn-teal submit-btn" id="ck-submit">Check eligibility</button></div>
+          <p class="consent">Your details go securely to Synergy Dental Group and are only used to check your child&#8217;s CDBS eligibility and contact you about it.</p>
+        </fieldset>
+        <div class="form-msg" id="ck-error" role="alert"></div>
+      </form>
+
+      <div class="success-state" id="ck-success" tabindex="-1">
+        <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Thanks<span id="ck-s-name"></span>, we&#8217;ve got it.</h3>
+        <p>Our team will check <span id="ck-s-child">your child</span>&#8217;s eligibility with Medicare and give you a call to let you know, and to book their check and clean.</p>
+        <div class="ck-s-acts"><a class="btn btn-teal" href="#online-booking" onclick="trackConv('book_now_click')">Or book a time now</a><a class="btn ck-s-call" href="tel:0363616721" onclick="return trackConv('call_click')">&#9742;&nbsp;(03) 6361 6721</a></div>
+      </div>
     </div>
   </div>
 </section>
+
+
 
 <!-- LOGO STRIP -->
 <div class="lstrip" aria-label="Health funds and payment options">
@@ -436,6 +569,22 @@ function trackConv(label, url){
   </div>
 </div>
 
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">How it works</span>
+      <h2>We do the Medicare check for you</h2>
+      <p>No forms to chase and no guesswork about what&#8217;s covered.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step"><span class="how-n">1</span><h3>Tell us about your child</h3><p>Answer a few quick questions and add your child&#8217;s Medicare details. It takes about a minute.</p></div>
+      <div class="how-step"><span class="how-n">2</span><h3>We check with Medicare</h3><p>Our team confirms your child&#8217;s eligibility and their available CDBS balance directly with Medicare.</p></div>
+      <div class="how-step"><span class="how-n">3</span><h3>We call to book</h3><p>We let you know the result and book a check and clean at a time that suits, with nothing to pay for covered services.*</p></div>
+    </div>
+    <div class="how-cta"><a class="btn btn-teal" href="#check" onclick="trackConv('cdbs_check_click')">Check my child&#8217;s eligibility <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a></div>
+  </div>
+</section>
+
 <!-- WHAT'S COVERED -->
 <section class="whywrap" id="covered">
   <div class="wrap">
@@ -458,13 +607,28 @@ function trackConv(label, url){
   </div>
 </section>
 
+<!-- ONLINE BOOKING -->
+<section class="bookwrap">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center;max-width:620px;margin:0 auto 20px">
+      <span class="eyebrow">Already know you&#8217;re eligible?</span>
+      <h2>Book a time that suits you</h2>
+    </div>
+    <div class="form-card" id="online-booking">
+      <h3 style="margin:0 0 4px">Book your child’s check &amp; clean</h3>
+      <p class="fnote" style="margin:0 0 12px">Pick a time below and you’re booked. It takes less than a minute. Eligibility is confirmed with Medicare before any treatment begins.</p>
+      <iframe id='zavy-online-booking' src='https://bookings.zavy360.com/booking/greystdentist/locations/8d73a356-e6a2-48e8-abe6-8079e1a838ce/reasons' frameborder='0' scrolling='no' width='100%' style='pointer-events: auto; border: none; display: block; width: 100%; min-height: 520px; border-radius: 12px; background:#fff;'></iframe>
+    </div>
+  </div>
+</section>
+
 <!-- FINAL CTA -->
 <section class="final">
   <div class="wrap">
     <span class="free-pill"><span class="d"></span>Free Check &amp; Clean For Kids &amp; Teens*</span>
     <h2>School holidays are the perfect time</h2>
-    <p>Book your child’s bulk billed check and clean at Synergy Dental Group, Parkdale. No gap, no claim forms, no fuss.</p>
-    <a class="btn btn-teal" href="#online-booking" onclick="trackConv('book_now_click');if(typeof fbq==='function'){fbq('trackCustom','ScrollToBooking');}">Book a bulk billed check &amp; clean <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a>
+    <p>Check your child&#8217;s eligibility in about a minute and we&#8217;ll do the rest. No gap for covered services, no claim forms, no fuss.</p>
+    <a class="btn btn-teal" href="#check" onclick="trackConv('cdbs_check_click')">Check my child&#8217;s eligibility <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a>
   </div>
 </section>
 <!-- FIND US -->
@@ -499,7 +663,7 @@ function trackConv(label, url){
 </footer>
 
 <!-- Sticky mobile CTA -->
-<div class="mbar"><a class="c" href="tel:0363616721" onclick="return trackConv('call_click')">&#9742;&nbsp;Call now</a><a class="b" href="#online-booking" onclick="trackConv('book_now_click');if(typeof fbq==='function'){fbq('trackCustom','ScrollToBooking');}">Book online <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a></div>
+<div class="mbar"><a class="c" href="tel:0363616721" onclick="return trackConv('call_click')">&#9742;&nbsp;Call now</a><a class="b" href="#check" onclick="trackConv('cdbs_check_click')">Check eligibility <svg class="arrw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></a></div>
 
 
 
@@ -545,6 +709,162 @@ function trackConv(label, url){
     else if(day === 'Sat'){ open = mins >= 540 && mins < 780; }
     if(open){ document.body.classList.add('is-open'); }
   }catch(e){}
+})();
+</script>
+
+<script>
+/* CDBS eligibility check: 3-step form, posts to /api/cdbs-check (falls back to the freeconsult Vercel project) */
+(function () {
+  var ENDPOINTS = ['/api/cdbs-check', 'https://freeconsult.synergydentalgroup.com.au/api/cdbs-check'];
+  var form = document.getElementById('cdbs-form');
+  if (!form) return;
+  var card = document.getElementById('check');
+  var steps = [].slice.call(form.querySelectorAll('.ck-step'));
+  var pips = [].slice.call(card.querySelectorAll('.ck-pip'));
+  var errBox = document.getElementById('ck-error');
+  var current = 1, started = false;
+
+  function push(ev) { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: ev }); }
+  function val(n) { var el = form.elements[n]; if (!el) return ''; if (el.length && !el.tagName) { for (var i = 0; i < el.length; i++) if (el[i].checked) return el[i].value; return ''; } return (el.value || '').trim(); }
+  function setErr(name, msg) {
+    var input = form.elements[name]; if (!input || !input.closest) return;
+    var f = input.closest('.field'); if (!f) return;
+    f.classList.toggle('has-error', !!msg);
+    var e = f.querySelector('.ferr'); if (e) e.textContent = msg || '';
+  }
+  function digits(s) { return String(s || '').replace(/\D/g, ''); }
+
+  // Medicare number: 10 digits, first digit 2-6, 9th digit is a weighted checksum of the first 8
+  function medicareOk(n) {
+    var d = digits(n); if (d.length !== 10 || '23456'.indexOf(d[0]) === -1) return false;
+    var w = [1, 3, 7, 9, 1, 3, 7, 9], s = 0;
+    for (var i = 0; i < 8; i++) s += (+d[i]) * w[i];
+    return s % 10 === +d[8];
+  }
+  function ageYears(iso) {
+    var b = new Date(iso + 'T00:00:00'); if (isNaN(b)) return null;
+    var t = new Date(), a = t.getFullYear() - b.getFullYear();
+    var m = t.getMonth() - b.getMonth(); if (m < 0 || (m === 0 && t.getDate() < b.getDate())) a--;
+    return { age: a, future: b > t };
+  }
+
+  // date limits: born within the last 18 years
+  (function () {
+    var dob = form.elements.childDob; if (!dob) return;
+    var t = new Date(), min = new Date(t.getFullYear() - 18, t.getMonth(), t.getDate() + 1);
+    function iso(d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+    dob.max = iso(t); dob.min = iso(min);
+  })();
+
+  // Medicare number formatting 1234 56789 1
+  form.elements.medicareNumber.addEventListener('input', function () {
+    var d = digits(this.value).slice(0, 10), out = d.slice(0, 4);
+    if (d.length > 4) out += ' ' + d.slice(4, 9);
+    if (d.length > 9) out += ' ' + d.slice(9);
+    this.value = out;
+  });
+  form.elements.medicareIrn.addEventListener('input', function () { this.value = digits(this.value).replace(/0/g, '').slice(0, 1); });
+
+  // step 1 answers
+  function step1Notes() {
+    var age = val('ageOk'), pay = val('familyPayment');
+    document.getElementById('ck-age-no').hidden = age !== 'No';
+    document.getElementById('ck-ftb-no').hidden = !(pay === 'No' && age !== 'No');
+    steps[0].querySelector('[data-next]').disabled = age === 'No';
+    steps[0].querySelector('.ck-step-err').textContent = '';
+  }
+  [].forEach.call(form.querySelectorAll('input[name=ageOk],input[name=familyPayment]'), function (r) {
+    r.addEventListener('change', function () { step1Notes(); if (!started) { started = true; push('cdbs_check_start'); } });
+  });
+
+  function validate(step) {
+    var ok = true;
+    function req(n, msg) { if (!val(n)) { setErr(n, msg || 'Please fill this in'); ok = false; } else setErr(n, ''); }
+    if (step === 1) {
+      var e1 = steps[0].querySelector('.ck-step-err');
+      if (!val('ageOk') || !val('familyPayment')) { e1.textContent = 'Please answer both questions'; ok = false; }
+      if (val('ageOk') === 'No') ok = false;
+    }
+    if (step === 2) {
+      req('childFirstName'); req('childLastName');
+      var dob = val('childDob');
+      if (!dob) { setErr('childDob', 'Please add your child’s date of birth'); ok = false; }
+      else { var a = ageYears(dob); if (!a || a.future) { setErr('childDob', 'Please check the date of birth'); ok = false; } else if (a.age > 17) { setErr('childDob', 'The CDBS covers children aged 0 to 17'); ok = false; } else setErr('childDob', ''); }
+      if (!medicareOk(val('medicareNumber'))) { setErr('medicareNumber', 'Please check the 10-digit number on the card'); ok = false; } else setErr('medicareNumber', '');
+      if (!/^[1-9]$/.test(val('medicareIrn'))) { setErr('medicareIrn', 'One digit, next to their name'); ok = false; } else setErr('medicareIrn', '');
+    }
+    if (step === 3) {
+      req('parentFirstName'); req('parentLastName');
+      var p = digits(val('phone')); if (p.length < 8 || p.length > 12) { setErr('phone', 'Please enter a valid phone number'); ok = false; } else setErr('phone', '');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val('email'))) { setErr('email', 'Please enter a valid email'); ok = false; } else setErr('email', '');
+      req('suburb', 'Please add your suburb or postcode');
+      var c = form.querySelector('.ck-consent-err');
+      if (!form.elements.consent.checked) { c.textContent = 'Please tick to let us check with Medicare'; ok = false; } else c.textContent = '';
+    }
+    if (!ok) { var first = steps[step - 1].querySelector('.has-error input'); if (first) first.focus(); }
+    return ok;
+  }
+
+  function go(n) {
+    current = n;
+    steps.forEach(function (s, i) { var on = i === n - 1; s.hidden = !on; s.classList.toggle('is-active', on); });
+    pips.forEach(function (p, i) { p.classList.toggle('is-on', i === n - 1); p.classList.toggle('is-done', i < n - 1); });
+    errBox.className = 'form-msg'; errBox.textContent = '';
+    var r = card.getBoundingClientRect(); if (r.top < 0 || r.top > window.innerHeight * 0.5) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var f = steps[n - 1].querySelector('input:not([type=radio])'); if (f && n > 1) setTimeout(function () { f.focus({ preventScroll: true }); }, 250);
+    push('cdbs_check_step_' + n);
+  }
+  [].forEach.call(form.querySelectorAll('[data-next]'), function (b) { b.addEventListener('click', function () { if (validate(current)) go(current + 1); }); });
+  [].forEach.call(form.querySelectorAll('[data-back]'), function (b) { b.addEventListener('click', function () { go(current - 1); }); });
+  // live-clear field errors
+  form.addEventListener('input', function (e) { if (e.target.name) { var f = e.target.closest && e.target.closest('.field'); if (f && f.classList.contains('has-error')) setErr(e.target.name, ''); } });
+
+  function qs(k) { try { return new URLSearchParams(location.search).get(k) || ''; } catch (e) { return ''; } }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (current !== 3) { if (validate(current)) go(current + 1); return; }
+    if (!validate(3)) return;
+    var btn = document.getElementById('ck-submit');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    var payload = {
+      ageOk: val('ageOk'), familyPayment: val('familyPayment'),
+      childFirstName: val('childFirstName'), childLastName: val('childLastName'), childDob: val('childDob'),
+      medicareNumber: digits(val('medicareNumber')), medicareIrn: val('medicareIrn'),
+      parentFirstName: val('parentFirstName'), parentLastName: val('parentLastName'),
+      phone: val('phone'), email: val('email'), suburb: val('suburb'), consent: 'Yes',
+      website: val('website'),
+      page: location.href.split('#')[0],
+      utmSource: qs('utm_source'), utmMedium: qs('utm_medium'), utmCampaign: qs('utm_campaign'),
+      clickId: qs('gclid') ? 'gclid' : (qs('fbclid') ? 'fbclid' : '')
+    };
+
+    function fail(msg) {
+      btn.disabled = false; btn.textContent = 'Check eligibility';
+      errBox.className = 'form-msg err';
+      errBox.innerHTML = msg || 'Sorry, something went wrong sending your details. Please try again, or call us on <a href="tel:0363616721">(03) 6361 6721</a>.';
+    }
+    function tryAt(i) {
+      if (i >= ENDPOINTS.length) return fail();
+      fetch(ENDPOINTS[i], { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+        .then(function (r) {
+          if (r.status === 404 || r.status === 405) return tryAt(i + 1);
+          return r.json().then(function (j) { if (r.ok && j && j.ok) return done(); fail(); }, function () { tryAt(i + 1); });
+        })
+        .catch(function () { tryAt(i + 1); });
+    }
+    function done() {
+      push('cdbs_check_submit');
+      if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'CDBS eligibility check' });
+      document.getElementById('ck-s-name').textContent = payload.parentFirstName ? ', ' + payload.parentFirstName : '';
+      document.getElementById('ck-s-child').textContent = payload.childFirstName || 'your child';
+      form.style.display = 'none';
+      card.querySelector('.ck-top').style.display = 'none';
+      var s = document.getElementById('ck-success'); s.style.display = 'block'; s.focus();
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    tryAt(0);
+  });
 })();
 </script>
 </body>
